@@ -1,8 +1,10 @@
 const express = require('express');
 const crypto = require('crypto');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post('/generate-signature', (req, res) => {
     const { appID, senha } = req.body;
